@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Readify — Reading Progress</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --primary: #3b82f6;
+      --dark: #111827;
+      --gray: #6b7280;
+      --light: #f9fafb;
+      --bg-gradient: linear-gradient(135deg, #f0f7ff 0%, #e0f2fe 100%);
+      --success: #10b981;
+      --card-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    /* Navigation ── same as previous pages */
+    nav {
+      background: white;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 1rem 5%;
+    }
+
+    .nav-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.1rem;
+      color: var(--primary);
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .logo::before { content:"📖"; font-size: 2.4rem; }
+
+    .nav-links {
+      display: flex;
+      gap: 2.2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--dark);
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active { color: var(--primary); }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+    }
+
+    .bar {
+      width: 28px;
+      height: 3px;
+      background: var(--dark);
+      transition: all 0.3s;
+    }
+
+    /* Header */
+    .page-header {
+      text-align: center;
+      padding: 5rem 5% 3rem;
+      background: var(--bg-gradient);
+    }
+
+    .page-header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 7vw, 4.5rem);
+      margin-bottom: 1rem;
+    }
+
+    .page-header p {
+      color: var(--gray);
+      font-size: 1.25rem;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    /* Tracker Section */
+    .tracker-container {
+      max-width: 700px;
+      margin: 0 auto 5rem;
+      padding: 0 5%;
+    }
+
+    .tracker-card {
+      background: white;
+      border-radius: 20px;
+      box-shadow: var(--card-shadow);
+      padding: 2.5rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.8rem;
+    }
+
+    label {
+      display: block;
+      font-weight: 500;
+      margin-bottom: 0.6rem;
+      color: var(--dark);
+    }
+
+    input[type="number"] {
+      width: 100%;
+      padding: 1rem 1.4rem;
+      border: 1px solid #d1d5db;
+      border-radius: 12px;
+      font-size: 1.1rem;
+      transition: border-color 0.2s;
+    }
+
+    input[type="number"]:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(59,130,246,0.15);
+    }
+
+    .btn {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 1rem 2rem;
+      border-radius: 12px;
+      font-size: 1.1rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.2s;
+      margin-right: 1rem;
+    }
+
+    .btn:hover { background: #2563eb; }
+
+    .btn-save {
+      background: var(--success);
+    }
+
+    .btn-save:hover { background: #059669; }
+
+    /* Results */
+    .results {
+      margin-top: 2.5rem;
+      padding-top: 2rem;
+      border-top: 1px solid #e5e7eb;
+    }
+
+    .progress-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .percentage {
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .progress-bar-container {
+      height: 24px;
+      background: #e5e7eb;
+      border-radius: 12px;
+      overflow: hidden;
+      margin: 1.2rem 0;
+    }
+
+    .progress-bar {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, var(--primary), #60a5fa);
+      transition: width 1.2s ease-out;
+      border-radius: 12px;
+    }
+
+    .estimate {
+      font-size: 1.15rem;
+      color: #374151;
+      text-align: center;
+      margin-top: 1.5rem;
+    }
+
+    .no-data {
+      text-align: center;
+      color: var(--gray);
+      font-style: italic;
+      padding: 3rem 0;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .nav-links.active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        padding: 1.5rem;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      }
+      .nav-links.active a { padding: 1rem 0; font-size: 1.15rem; }
+
+      .tracker-card { padding: 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-container">
+      <div class="logo">Readify</div>
+      
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="books.html">Explore</a></li>
+        <li><a href="tracker.html" class="active">Progress</a></li>
+        <li><a href="recommender.html">Recommend</a></li>
+        <li><a href="readingflow.html">Flow</a></li>
+        <li><a href="feedback.html">Feedback</a></li>
+      </ul>
+
+      <div class="hamburger">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="page-header">
+    <h1>Reading Progress</h1>
+    <p>Track how far you've come and how much is left in your current read</p>
+  </header>
+
+  <!-- Tracker Form & Results -->
+  <section class="tracker-container">
+    <div class="tracker-card">
+      <form id="progressForm">
+        <div class="form-group">
+          <label for="totalPages">Total Pages in the Book</label>
+          <input type="number" id="totalPages" min="1" placeholder="e.g. 350" required>
+        </div>
+
+        <div class="form-group">
+          <label for="pagesRead">Pages You've Read</label>
+          <input type="number" id="pagesRead" min="0" placeholder="e.g. 120" required>
+        </div>
+
+        <div class="form-group">
+          <label for="dailySpeed">Reading Speed (pages per day)</label>
+          <input type="number" id="dailySpeed" min="1" placeholder="e.g. 30" required>
+        </div>
+
+        <div style="margin-top: 2rem;">
+          <button type="submit" class="btn">Calculate Progress</button>
+          <button type="button" id="saveBtn" class="btn btn-save">Save Progress</button>
+        </div>
+      </form>
+
+      <div class="results" id="results" style="display: none;">
+        <div class="progress-header">
+          <span>Your Progress</span>
+          <span class="percentage" id="percentText">0%</span>
+        </div>
+
+        <div class="progress-bar-container">
+          <div class="progress-bar" id="progressBar"></div>
+        </div>
+
+        <p class="estimate" id="estimateText">Estimated time to finish: — days</p>
+      </div>
+
+      <div class="no-data" id="noData">Enter your reading details to see progress.</div>
+    </div>
+  </section>
+
+  <script>
+    // ── Hamburger Menu ── (same as other pages)
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+    // ── Elements ──
+    const form = document.getElementById('progressForm');
+    const totalInput = document.getElementById('totalPages');
+    const readInput = document.getElementById('pagesRead');
+    const speedInput = document.getElementById('dailySpeed');
+    const resultsDiv = document.getElementById('results');
+    const noDataDiv = document.getElementById('noData');
+    const percentText = document.getElementById('percentText');
+    const progressBar = document.getElementById('progressBar');
+    const estimateText = document.getElementById('estimateText');
+    const saveBtn = document.getElementById('saveBtn');
+
+    // ── Load saved data from localStorage ──
+    function loadSavedProgress() {
+      const saved = localStorage.getItem('readifyProgress');
+      if (saved) {
+        const data = JSON.parse(saved);
+        totalInput.value = data.total || '';
+        readInput.value = data.read || '';
+        speedInput.value = data.speed || '';
+        calculateProgress(); // show immediately
+      }
+    }
+
+    // ── Calculate & Animate ──
+    function calculateProgress() {
+      const total = parseInt(totalInput.value) || 0;
+      const read = parseInt(readInput.value) || 0;
+      const speed = parseInt(speedInput.value) || 1;
+
+      if (total <= 0 || read < 0 || speed <= 0) {
+        resultsDiv.style.display = 'none';
+        noDataDiv.style.display = 'block';
+        return;
+      }
+
+      const percent = Math.min(Math.max((read / total) * 100, 0), 100);
+      const remainingPages = total - read;
+      const daysLeft = Math.ceil(remainingPages / speed);
+
+      // Show results
+      resultsDiv.style.display = 'block';
+      noDataDiv.style.display = 'none';
+
+      // Animate percentage & bar
+      let current = 0;
+      const step = percent > 50 ? 2 : 1; // faster for higher values
+      const interval = setInterval(() => {
+        if (current >= percent) {
+          current = percent;
+          clearInterval(interval);
+        } else {
+          current += step;
+          if (current > percent) current = percent;
+        }
+
+        percentText.textContent = `${Math.round(current)}%`;
+        progressBar.style.width = `${current}%`;
+      }, 20);
+
+      // Estimate text
+      estimateText.textContent = `Estimated time to finish: ${daysLeft} day${daysLeft === 1 ? '' : 's'}`;
+    }
+
+    // ── Form submit (calculate) ──
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      calculateProgress();
+    });
+
+    // ── Save to localStorage ──
+    saveBtn.addEventListener('click', () => {
+      const data = {
+        total: totalInput.value,
+        read: readInput.value,
+        speed: speedInput.value
+      };
+      localStorage.setItem('readifyProgress', JSON.stringify(data));
+      alert('Progress saved! It will load automatically next time.');
+    });
+
+    // ── Live update while typing (optional nice-to-have) ──
+    [totalInput, readInput, speedInput].forEach(input => {
+      input.addEventListener('input', () => {
+        if (totalInput.value && readInput.value && speedInput.value) {
+          calculateProgress();
+        }
+      });
+    });
+
+    // Load on page open
+    loadSavedProgress();
+  </script>
+</body>
+</html>
