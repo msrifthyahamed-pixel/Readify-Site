@@ -93,7 +93,31 @@ function renderList() {
 }
 
 suggestBtn.addEventListener('click', suggestBook);
-againBtn.addEventListener('click', suggestBook);
+
+
+let isAnimating = false;
+
+againBtn.addEventListener('click', () => {
+  if (isAnimating) return;
+
+  isAnimating = true;
+
+  // Suggest a new book immediately
+  suggestBook();
+
+  // Restart animation reliably
+  againBtn.classList.remove('spin');
+  void againBtn.offsetHeight; // force reflow (more reliable than offsetWidth)
+  againBtn.classList.add('spin');
+});
+
+// Remove spin class when animation completes (no timing guesswork)
+againBtn.addEventListener('animationend', () => {
+  againBtn.classList.remove('spin');
+  isAnimating = false;
+});
+
+
 saveBtn.addEventListener('click', saveToList);
 
 renderList();

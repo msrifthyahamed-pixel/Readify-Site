@@ -1,3 +1,5 @@
+
+
 let quotes = [];
 let authors = [];
 
@@ -69,5 +71,17 @@ var newsletterForm = document.getElementById('newsletterForm');
         emailInput.value = '';
         localStorage.setItem('subscribedEmail', email);
       });
-
+      
+   // Register Service Worker (register on load with root scope)
+    window.addEventListener('load', () => {
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/service-worker.js')
+          .then((registration) => {
+            console.log('Service Worker registered successfully:', registration);
+          })
+          .catch((error) => {
+            console.log('Service Worker registration failed:', error);
+          });
+      }
+    });
 loadHomeData();

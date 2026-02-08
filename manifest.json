@@ -1,0 +1,78 @@
+{
+  "name": "Readify - Your Reading Journey",
+  "short_name": "Readify",
+  "description": "Discover your next great read, track your reading progress, and get personalized book recommendations",
+  "start_url": "/index.html",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "theme_color": "#2c3e50",
+  "background_color": "#ffffff",
+  "icons": [
+    {
+      "src": "image/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "image/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "image/icon-192x192-maskable.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "image/icon-512x512-maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "categories": ["books", "education", "productivity"],
+  "shortcuts": [
+    {
+      "name": "Explore Books",
+      "short_name": "Explore",
+      "description": "Browse and discover new books",
+      "url": "/books.html?source=pwa_shortcut",
+      "icons": [
+        {
+          "src": "image/icon-explore-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Track Progress",
+      "short_name": "Progress",
+      "description": "Check your reading progress",
+      "url": "/tracker.html?source=pwa_shortcut",
+      "icons": [
+        {
+          "src": "image/icon-tracker-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "image/screenshot-540.png",
+      "sizes": "540x720",
+      "type": "image/png",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "image/screenshot-1280.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide"
+    }
+  ]
+}
