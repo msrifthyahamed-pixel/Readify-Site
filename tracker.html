@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Readify — Reading Progress</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="tracker.css"/>
+
+
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-container">
+      <div class="logo">Readify</div>
+      
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="books.html">Explore</a></li>
+        <li><a href="tracker.html" class="active">Progress</a></li>
+        <li><a href="recommender.html">Recommend</a></li>
+        <li><a href="readingflow.html">Flow</a></li>
+        <li><a href="feedback.html">Feedback</a></li>
+      </ul>
+
+      <div class="hamburger">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="page-header">
+    <h1>Reading Progress</h1>
+    <p>Track how far you've come and how much is left in your current read</p>
+  </header>
+
+  <!-- Tracker Form & Results -->
+  <section class="tracker-container">
+    <div class="tracker-card">
+      <form id="progressForm">
+        <div class="form-group">
+          <label for="totalPages">Total Pages in the Book</label>
+          <input type="number" id="totalPages" min="1" placeholder="e.g. 350" required>
+        </div>
+
+        <div class="form-group">
+          <label for="pagesRead">Pages You've Read</label>
+          <input type="number" id="pagesRead" min="0" placeholder="e.g. 120" required>
+        </div>
+
+        <div class="form-group">
+          <label for="dailySpeed">Reading Speed (pages per day)</label>
+          <input type="number" id="dailySpeed" min="1" placeholder="e.g. 30" required>
+        </div>
+
+        <div style="margin-top: 2rem;">
+          <button type="submit" class="btn">Calculate Progress</button>
+          <button type="button" id="saveBtn" class="btn btn-save">Save Progress</button>
+        </div>
+      </form>
+
+      <div class="results" id="results" style="display: none;">
+        <div class="progress-header">
+          <span>Your Progress</span>
+          <span class="percentage" id="percentText">0%</span>
+        </div>
+
+        <div class="progress-bar-container">
+          <div class="progress-bar" id="progressBar"></div>
+        </div>
+
+        <p class="estimate" id="estimateText">Estimated time to finish: — days</p>
+      </div>
+
+      <div class="no-data" id="noData">Enter your reading details to see progress.</div>
+    </div>
+  </section>
+
+  <script src="tracker.js" defer></script>
+  <script src="books.js" defer></script>
+    
+</body>
+</html>

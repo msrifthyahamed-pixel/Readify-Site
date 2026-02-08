@@ -1,0 +1,227 @@
+ 
+    :root {
+      --primary: #3b82f6;
+      --dark: #111827;
+      --gray: #6b7280;
+      --light: #f9fafb;
+      --bg-gradient: linear-gradient(135deg, #f0f7ff 0%, #e0f2fe 100%);
+      --card-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      --success: #10b981;
+    }
+
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    /* Navigation ── same as previous pages */
+    nav {
+      background: white;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 1rem 5%;
+    }
+
+    .nav-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.1rem;
+      color: var(--primary);
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .logo::before { content:"📖"; font-size: 2.4rem; }
+
+    .nav-links {
+      display: flex;
+      gap: 2.2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--dark);
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active { color: var(--primary); }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+    }
+
+    .bar {
+      width: 28px;
+      height: 3px;
+      background: var(--dark);
+      transition: all 0.3s;
+    }
+
+    /* Header */
+    .page-header {
+      text-align: center;
+      padding: 5rem 5% 3rem;
+      background: var(--bg-gradient);
+    }
+
+    .page-header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 7vw, 4.5rem);
+      margin-bottom: 1rem;
+    }
+
+    .page-header p {
+      color: var(--gray);
+      font-size: 1.25rem;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    /* Main Content */
+    .flow-container {
+      max-width: 900px;
+      margin: 0 auto 5rem;
+      padding: 0 5%;
+      display: grid;
+      gap: 4rem;
+    }
+
+    .section-card {
+      background: white;
+      border-radius: 20px;
+      box-shadow: var(--card-shadow);
+      padding: 2.5rem;
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      margin-bottom: 1.6rem;
+      color: var(--dark);
+    }
+
+    /* Sounds */
+    .sounds-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.4rem;
+    }
+
+    .sound-btn {
+      padding: 1.4rem 1rem;
+      border: 2px solid #d1d5db;
+      border-radius: 16px;
+      background: #f8fafc;
+      font-size: 1.15rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.25s;
+      text-align: center;
+    }
+
+    .sound-btn.active {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+      transform: scale(1.04);
+    }
+
+    .sound-btn:hover:not(.active) {
+      border-color: var(--primary);
+      background: #eff6ff;
+    }
+
+    /* Completed Books */
+    .completed-form {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .completed-form input {
+      flex: 1;
+      min-width: 220px;
+      padding: 1rem 1.4rem;
+      border: 1px solid #d1d5db;
+      border-radius: 12px;
+      font-size: 1.05rem;
+    }
+
+    .completed-form button {
+      background: var(--success);
+      color: white;
+      border: none;
+      padding: 1rem 2rem;
+      border-radius: 12px;
+      font-size: 1.05rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .completed-form button:hover {
+      background: #059669;
+    }
+
+    .completed-list {
+      list-style: none;
+      display: grid;
+      gap: 1rem;
+    }
+
+    .completed-item {
+      background: #f0fdf4;
+      padding: 1.2rem 1.6rem;
+      border-radius: 12px;
+      border-left: 5px solid var(--success);
+      font-size: 1.1rem;
+    }
+
+    .empty-completed {
+      text-align: center;
+      color: var(--gray);
+      font-style: italic;
+      padding: 3rem 0;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .nav-links.active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        padding: 1.5rem;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      }
+      .nav-links.active a { padding: 1rem 0; font-size: 1.15rem; }
+
+      .sounds-grid { grid-template-columns: 1fr; }
+      .completed-form { flex-direction: column; }
+    }
+  

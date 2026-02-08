@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Readify — Reading Flow</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="readingflow.css" />
+  
+  
+
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-container">
+      <div class="logo">Readify</div>
+      
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="books.html">Explore</a></li>
+        <li><a href="tracker.html">Progress</a></li>
+        <li><a href="recommender.html">Recommend</a></li>
+        <li><a href="readingflow.html" class="active">Flow</a></li>
+        <li><a href="feedback.html">Feedback</a></li>
+      </ul>
+
+      <div class="hamburger">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="page-header">
+    <h1>Reading Flow</h1>
+    <p>Create your perfect cozy reading atmosphere</p>
+  </header>
+
+  <!-- Main Content -->
+  <section class="flow-container">
+
+    <!-- Ambient Sounds -->
+    <div class="section-card">
+      <h2>Cozy Sounds</h2>
+      <div class="sounds-grid">
+        <button class="sound-btn" data-sound="rain">Rain</button>
+        <button class="sound-btn" data-sound="fire">Fireplace</button>
+        <button class="sound-btn" data-sound="forest">Forest</button>
+      </div>
+    </div>
+
+    <!-- Completed Books -->
+    <div class="section-card">
+      <h2>Books I've Finished</h2>
+
+      <form class="completed-form" id="completedForm">
+        <input type="text" id="bookTitle" placeholder="Book title" required>
+        <button type="submit">Mark as Completed</button>
+      </form>
+
+      <ul class="completed-list" id="completedList"></ul>
+      <div class="empty-completed" id="emptyCompleted">No books marked as completed yet.</div>
+    </div>
+
+  </section>
+
+  <!-- Audio elements (hidden) -->
+  <audio id="rainAudio" loop>
+    <source src="https://assets.codepen.io/605876/rain.mp3" type="audio/mpeg">
+  </audio>
+  <audio id="fireAudio" loop>
+    <source src="https://assets.codepen.io/605876/fireplace.mp3" type="audio/mpeg">
+  </audio>
+  <audio id="forestAudio" loop>
+    <source src="https://assets.codepen.io/605876/forest-ambience.mp3" type="audio/mpeg">
+  </audio>
+
+<script src="books.js" defer></script>
+<script src="readingflow.js" defer></script>
+
+
+</body>
+</html>

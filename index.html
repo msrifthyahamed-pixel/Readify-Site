@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Readify - Your Reading Journey</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="index.css" /> 
+
+  
+ 
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-container">
+      <div class="logo">Readify</div>
+      
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="books.html">Explore</a></li>
+        <li><a href="tracker.html">Progress</a></li>
+        <li><a href="recommender.html">Recommend</a></li>
+        <li><a href="readingflow.html">Flow</a></li>
+        <li><a href="feedback.html">Feedback</a></li>
+      </ul>
+
+      <div class="hamburger">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Discover Your <span>Next</span><br>Great Read</h1>
+      
+      <div class="quote-container" id="quoteBox">
+        <p id="quoteText"></p>
+        <div id="quoteAuthor" class="quote-author"></div>
+      </div>
+    </div>
+
+    <div class="hero-image"></div>
+  </section>
+
+  <!-- Featured: Author of the Day -->
+  <section class="featured">
+    <h2>Author of the Day</h2>
+    <div class="author-card" id="authorCard">
+      <h3 id="authorName"></h3>
+      <p id="authorBio"></p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-links">
+      <a href="#">About Readify</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Contact</a>
+      <a href="#">FAQ</a>
+    </div>
+
+    <div class="newsletter">
+      <form id="newsletterForm">
+        <input type="email" id="emailInput" placeholder="Your email address" required>
+        <button  type="submit">Subscribe</button>
+      </form>
+    </div>
+
+    <p>© 2026 Readify | All rights reserved</p>
+  </footer>
+  
+  <script src="index.js" defer></script>
+  
+</body>
+</html>

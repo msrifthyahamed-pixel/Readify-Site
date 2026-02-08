@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Readify — Explore Books</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="books.css" />  
+  
+
+</head>
+<body>
+
+  <!-- Navigation ── same as index.html -->
+  <nav>
+    <div class="nav-container">
+      <div class="logo">Readify</div>
+      
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="books.html" class="active">Explore</a></li>
+        <li><a href="tracker.html">Progress</a></li>
+        <li><a href="recommender.html">Recommend</a></li>
+        <li><a href="readingflow.html">Flow</a></li>
+        <li><a href="feedback.html">Feedback</a></li>
+      </ul>
+
+      <div class="hamburger">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <h1>Explore Books</h1>
+    <p>Discover your next favorite read from our curated collection</p>
+  </header>
+
+  <!-- Filters -->
+  <div class="filters">
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Search by title or author...">
+    </div>
+    <select id="genreFilter" class="genre-select">
+      <option value="">All Genres</option>
+      <option value="fiction">Fiction</option>
+      <option value="sci-fi">Sci-Fi</option>
+      <option value="fantasy">Fantasy</option>
+      <option value="mystery">Mystery</option>
+      <option value="non-fiction">Non-Fiction</option>
+    </select>
+  </div>
+
+  <!-- Book Grid -->
+  <div class="book-grid" id="bookGrid"></div>
+
+  <!-- Modal -->
+  <div class="modal" id="bookModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 id="modalTitle"></h2>
+        <span class="close-btn" id="closeModal">×</span>
+      </div>
+      <div class="modal-body">
+        <p class="synopsis" id="modalSynopsis"></p>
+
+        <div class="related-books" id="relatedSection">
+          <h3>Related Books</h3>
+          <ul id="relatedList"></ul>
+        </div>
+
+        <table id="reviewsTable">
+          <thead>
+            <tr>
+              <th>User</th>
+              <th>Rating</th>
+              <th>Comment</th>
+            </tr>
+          </thead>
+          <tbody id="reviewsBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="books.js" defer></script>
+
+  
+
+</body>
+</html>

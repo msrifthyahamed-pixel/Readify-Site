@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Readify — Book Recommender</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="recommender.css"/>
+
+
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-container">
+      <div class="logo">Readify</div>
+      
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="books.html">Explore</a></li>
+        <li><a href="tracker.html">Progress</a></li>
+        <li><a href="recommender.html" class="active">Recommend</a></li>
+        <li><a href="readingflow.html">Flow</a></li>
+        <li><a href="feedback.html">Feedback</a></li>
+      </ul>
+
+      <div class="hamburger">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="page-header">
+    <h1>Find Your Next Read</h1>
+    <p>Let us surprise you with a perfect book match</p>
+  </header>
+
+  <!-- Recommender -->
+  <section class="recommender-container">
+    <div class="controls">
+      <select id="genreSelect">
+        <option value="">Any Genre</option>
+        <option value="fiction">Fiction</option>
+        <option value="fantasy">Fantasy</option>
+        <option value="sci-fi">Sci-Fi</option>
+        <option value="mystery">Mystery</option>
+        <option value="non-fiction">Non-Fiction</option>
+      </select>
+
+      <select id="lengthSelect">
+        <option value="">Any Length</option>
+        <option value="short">Short (~100–250 pages)</option>
+        <option value="medium">Medium (~250–500 pages)</option>
+        <option value="long">Long (500+ pages)</option>
+      </select>
+    </div>
+
+    <div style="text-align: center; margin: 2rem 0;">
+      <button id="suggestBtn" class="btn">Suggest a Book</button>
+    </div>
+
+    <div class="recommendation" id="recommendationCard" style="display: none;">
+      <div class="book-cover-placeholder">📖</div>
+      <div class="book-title" id="recTitle"></div>
+      <div class="book-author" id="recAuthor"></div>
+      <div>
+        <button id="againBtn" class="btn btn-again">Pick Again</button>
+        <button id="saveBtn" class="btn btn-save">Save to My List</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- My Reading List -->
+  <section class="reading-list">
+    <h2>My Reading List</h2>
+    <ul class="list-items" id="readingList"></ul>
+    <div class="empty-list" id="emptyList">Your reading list is empty. Find a book above!</div>
+  </section>
+ 
+  <script src="recommender.js" defer></script>
+
+</body>
+</html>

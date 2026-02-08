@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Readify — Feedback & FAQ</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="feedback.css" />
+
+  
+  
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-container">
+      <div class="logo">Readify</div>
+      
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="books.html">Explore</a></li>
+        <li><a href="tracker.html">Progress</a></li>
+        <li><a href="recommender.html">Recommend</a></li>
+        <li><a href="readingflow.html">Flow</a></li>
+        <li><a href="feedback.html" class="active">Feedback</a></li>
+      </ul>
+
+      <div class="hamburger">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="page-header">
+    <h1>Feedback & FAQ</h1>
+    <p>We'd love to hear your thoughts — and find quick answers here</p>
+  </header>
+
+  <!-- Main Content -->
+  <section class="feedback-container">
+
+    <!-- Feedback Form -->
+    <div class="section-card">
+      <h2>Send us your Feedback</h2>
+
+      <form id="feedbackForm">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" placeholder="Your name" required minlength="2">
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="your@email.com" required>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" placeholder="How can we improve Readify?" required minlength="10"></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">Submit Feedback</button>
+      </form>
+
+      <div id="formMessage" class="message" style="display:none;"></div>
+    </div>
+
+    <!-- FAQ Accordion -->
+    <div class="section-card">
+      <h2>Frequently Asked Questions</h2>
+
+      <div class="accordion-item">
+        <div class="accordion-header">How do I save my reading progress?</div>
+        <div class="accordion-content">
+          <p>Go to the Progress page, enter your book details and click "Save Progress". Your data is stored in your browser (localStorage) so it will be there next time you visit — even if you close the tab.</p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <div class="accordion-header">Can I listen to sounds while reading on another tab?</div>
+        <div class="accordion-content">
+          <p>Yes — the ambient sounds will keep playing even if you switch tabs or minimize the browser (as long as the tab isn't fully suspended by your browser).</p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <div class="accordion-header">Is my data safe?</div>
+        <div class="accordion-content">
+          <p>All data (progress, reading list, completed books, newsletter email, feedback) is stored only in your browser using localStorage. Nothing is sent to any server.</p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <div class="accordion-header">How do I add more books to the collection?</div>
+        <div class="accordion-content">
+          <p>This is a front-end only project for the assignment. You can easily add more books by editing the <code>books</code> array in <code>books.js</code> or directly in the pages where the array is defined.</p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <div class="accordion-header">Why isn't the site asking for login?</div>
+        <div class="accordion-content">
+          <p>Readify is designed as a simple, no-account-needed experience. All personalization is local to your device/browser.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+<script src="feedback.js"></script>
+
+</body>
+</html>
