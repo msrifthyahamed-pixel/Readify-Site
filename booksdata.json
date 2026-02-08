@@ -1,44 +1,44 @@
 [
   {
-    "title": "The Midnight Library",
-    "author": "Matt Haig",
-    "genre": "fiction",
-    "length": "medium",
-    "pages": 304,
-    "cover": "https://images.unsplash.com/photo-1544947950-fa07a98d467e?auto=format&fit=crop&w=400&q=80",
-    "synopsis": "Between life and death there is a library. When Nora Seed finds herself in the Midnight Library, she has a chance to make things right...",
+    "title": "The Girl with the Dragon Tattoo",
+    "author": "Stieg Larsson",
+    "genre": "mystery",
+    "length": "Long",
+    "pages": 600,
+    "cover": "image/The Girl with the Dragon Tattoo.jpg",
+    "synopsis": "Journalist Mikael Blomkvist and hacker Lisbeth Salander team up to solve a decades-old disappearance within a wealthy, dysfunctional family.",
     "prequels": [],
-    "sequels": [],
+    "sequels": ["The Girl Who Played with Fire", "The Girl Who Kicked the Hornets' Nest (Series continued by David Lagercrantz: The Girl in the Spider's Web, etc.)"],
     "reviews": [
-      { "user": "Alex92", "rating": 5, "comment": "Life-changing. Made me think about all my choices." },
-      { "user": "reader_lena", "rating": 4, "comment": "Beautiful concept, a bit slow in the middle." }
+      { "user": "John", "rating": 5, "comment": "Life-changing. Made me think about all my choices." },
+      { "user": "lena_reader", "rating": 4, "comment": "Beautiful concept, a bit slow in the middle." }
     ]
   },
   {
-    "title": "Project Hail Mary",
-    "author": "Andy Weir",
+    "title": "The Hunger Games",
+    "author": "Suzanne Collins",
     "genre": "sci-fi",
-    "length": "long",
-    "pages": 496,
-    "cover": "https://images.unsplash.com/photo-1589995632479-4c2421b47a5e?auto=format&fit=crop&w=400&q=80",
-    "synopsis": "Ryland Grace is the sole survivor on a desperate, last-chance mission...",
-    "prequels": [],
-    "sequels": [],
+    "length": "Medium",
+    "pages": 374,
+    "cover": "image/The Hunger Games.jpg",
+    "synopsis": "In a dystopian future, teenagers are forced to participate in a televised fight to the death. Katniss Everdeen volunteers to take her sister's place.",
+    "prequels": ["The Ballad of Songbirds and Snakes"],
+    "sequels": ["Catching Fire, Mockingjay"],
     "reviews": [
       { "user": "spacefan21", "rating": 5, "comment": "Best hard sci-fi in years." },
-      { "user": "sci-fi_nerd", "rating": 5, "comment": "Couldn't put it down." }
+      { "user": "Ravi", "rating": 5, "comment": "Couldn't put it down." }
     ]
   },
   {
     "title": "The House in the Cerulean Sea",
     "author": "TJ Klune",
     "genre": "fantasy",
-    "length": "medium",
+    "length": "Medium",
     "pages": 394,
-    "cover": "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=400&q=80",
+    "cover": "image/The House in the Cerulean Sea.jpg",
     "synopsis": "Linus Baker leads a quiet, solitary life...",
     "prequels": [],
-    "sequels": [],
+    "sequels": ["Somewhere Beyond the Sea (Released September 2024)."],
     "reviews": [
       { "user": "cozyreader", "rating": 5, "comment": "Warmest, kindest book I've read in forever." },
       { "user": "fantasyheart", "rating": 4, "comment": "So wholesome it hurts (in a good way)." }
@@ -48,42 +48,133 @@
     "title": "Dune",
     "author": "Frank Herbert",
     "genre": "sci-fi",
-    "length": "long",
+    "length": "Long",
     "pages": 896,
-    "cover": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=400&q=80",
+    "cover": "image/Dune.jpg",
     "synopsis": "A story of politics, religion, and ecology on a desert planet...",
-    "prequels": [],
+    "prequels": ["Dune: House Atreides, Dune: The Butlerian Jihad (written by Brian Herbert & Kevin J. Anderson)"],
     "sequels": ["Dune Messiah"],
     "reviews": [
       { "user": "epicfan", "rating": 5, "comment": "Masterpiece of world-building." }
     ]
   },
   {
-    "title": "The Hobbit",
-    "author": "J.R.R. Tolkien",
+    "title": "Assassin's Apprentice",
+    "author": "Robin Hobb",
     "genre": "fantasy",
-    "length": "medium",
-    "pages": 310,
-    "cover": "https://images.unsplash.com/photo-1629992100518-0c3a5119a399?auto=format&fit=crop&w=400&q=80",
-    "synopsis": "A young hobbit embarks on an unexpected journey...",
-    "prequels": [],
-    "sequels": ["The Lord of the Rings"],
+    "length": "Medium",
+    "pages": 435,
+    "cover": "image/Assassin's Apprentice.jpg",
+    "synopsis": "Fitz, the illegitimate son of a noble prince, is trained to be a royal assassin in a kingdom plagued by inland raiders and coastal invaders.",
+    "prequels": ["The Wilful Princess and the Piebald Prince"],
+    "sequels": ["Royal Assassin, Assassin's Quest (The Farseer Trilogy) "],
     "reviews": [
-      { "user": "classiclover", "rating": 5, "comment": "Timeless adventure." }
+      { "user": "Razik", "rating": 5, "comment": "Timeless adventure." }
     ]
   },
   {
-    "title": "1984",
-    "author": "George Orwell",
-    "genre": "fiction",
-    "length": "medium",
-    "pages": 328,
-    "cover": "https://images.unsplash.com/photo-1589829545856-d10d7d2e8f8f?auto=format&fit=crop&w=400&q=80",
-    "synopsis": "A dystopian novel about surveillance and totalitarianism...",
+    "title": "In the Woods",
+    "author": "Tana French",
+    "genre": "mystery",
+    "length": "Long",
+    "pages": 500,
+    "cover": "image/In_the_Woods_cover.jpg",
+    "synopsis": "Detective Rob Ryan investigates the murder of a young girl in a small Irish town, a case that bears terrifying similarities to a mystery from his own childhood.",
     "prequels": [],
-    "sequels": [],
+    "sequels": ["The Likeness, Faithful Place, Broken Harbor (Dublin Murder Squad series)"],
     "reviews": [
       { "user": "thoughtfulreader", "rating": 5, "comment": "Still relevant today." }
+    ]
+  },
+  {
+    "title": "Educated",
+    "author": "Tara Westover",
+    "genre": "non-fiction",
+    "length": "Medium",
+    "pages": 335,
+    "cover": "image/Educated.jpg",
+    "synopsis": "A memoir about a woman born to survivalists in the mountains of Idaho, who escapes her strict, uneducated upbringing through the pursuit of knowledge, eventually earning a PhD from Cambridge University.",
+    "prequels": [],
+    "sequels": ["No direct sequel, but often paired in reader discussions with The Glass Castle by Jeannette Walls or Hillbilly Elegy by J.D. Vance. "],
+    "reviews": [
+      { "user": "thoughtfulreader", "rating": 5, "comment": "Still relevant today." },
+      {"user":"Alone_reader", "rating": 4, "comment": "A powerful and moving memoir."}
+    ]
+  },
+  {
+    "title": "The Rib King",
+    "author": "Ladee Hubbard",
+    "genre": "non-fiction",
+    "length": "Medium",
+    "pages": 336,
+    "cover": "image/The Rib King.jpg",
+    "synopsis": "Set in the early 20th century, this story explores the lives of Black servants working for a white family, focusing on the character of August Sitwell, who is forced to become the face of a marketing campaign, highlighting the exploitation of Black labor.",
+    "prequels": [],
+    "sequels": ["The Talented Ribkins (centers on a related theme of inherited, magical, or unique talents among Black families in America). "],
+    "reviews": [
+      { "user": "waseem", "rating": 5, "comment": "A compelling and insightful read." },
+      {"user":"Raja", "rating": 4, "comment": "A powerful exploration of race and identity."}
+    ]
+  },
+  {
+    "title": "Harry Potter and the Sorcerer's Stone",
+    "author": "J.K. Rowling",
+    "genre": "fantasy",
+    "length": "Medium",
+    "pages": 320,
+    "cover": "image/Harry Potter and the Sorcerer's Stone.jpg",
+    "synopsis": "The story follows Harry Potter, a neglected orphan who discovers on his 11th birthday that he is a wizard. He is invited to attend Hogwarts School of Witchcraft and Wizardry, where he makes close friends (Ron Weasley and Hermione Granger), learns to fly on a broomstick, and discovers that his parents were killed by the evil dark wizard Lord Voldemort. Harry and his friends must protect the Sorcerer's Stone, a magical object hidden in the school that can grant immortality.",
+    "prequels": ["While not a traditional prequel novel, Harry Potter: The Prequel is an 800-word story published in 2008 by J.K. Rowling. The Fantastic Beasts series acts as a thematic prequel series."],
+    "sequels": ["Harry Potter and the Chamber of Secrets (1998), Harry Potter and the Prisoner of Azkaban (1999), Harry Potter and the Goblet of Fire (2000), Harry Potter and the Order of the Phoenix (2003), Harry Potter and the Half-Blood Prince (2005), Harry Potter and the Deathly Hallows (2007)"],
+    "reviews": [
+      { "user": "Alice", "rating": 5, "comment": "Stunningly written and engaging." },
+      {"user":"Merry", "rating": 5, "comment": "A magical journey that captivated me from start to finish."},
+      {"user":"Marchel_Reader", "rating": 4, "comment": "A powerful exploration of friendship and bravery."}
+    ]
+  },
+  {
+    "title": "The Women",
+    "author": "Kristin Hannah",
+    "genre": "fiction",
+    "length": "Long",
+    "pages": 460,
+    "cover": "image/The Women.jpg",
+    "synopsis": "A moving story about Frances \"Frankie\" McGrath, a nursing student who joins the Army Nurse Corps during the Vietnam War. It explores the often-overlooked stories of women who served and the challenges they faced returning home.",
+    "prequels": ["While not a traditional prequel novel, Harry Potter: The Prequel is an 800-word story published in 2008 by J.K. Rowling. The Fantastic Beasts series acts as a thematic prequel series."],
+    "sequels": [ ],
+    "reviews": [
+      { "user": "Bob", "rating": 4, "comment": "A compelling and emotional read." },
+      {"user":"reader_pricess", "rating": 5, "comment": "An emotional and gripping story. Highly recommend."}
+    ]
+  },
+  {
+    "title": "The Invisible Life of Addie LaRue",
+    "author": "V.E. Schwab",
+    "genre": "fiction",
+    "length": "Long",
+    "pages": 440,
+    "cover": "image/The Invisible Life of Addie LaRue.jpg",
+    "synopsis": " In 1714, a young woman makes a bargain to live forever but is cursed to be forgotten by everyone she meets. Her life changes when, after 300 years, she walks into a bookstore and someone remembers her name.",
+    "prequels": [],
+    "sequels": ["Standalone novel "],
+    "reviews": [
+      { "user": "Bob", "rating": 4, "comment": "A compelling and emotional read." },
+      {"user":"reader_pricess", "rating": 5, "comment": "An emotional and gripping story. Highly recommend."}
+    ]
+  },
+  {
+    "title": "Dark Matter",
+    "author": "Blake Crouch",
+    "genre": "sci-fi",
+    "length": "Medium",
+    "pages": 340,
+    "cover": "image/Dark Matter.jpg",
+    "synopsis": " Jason Dessen is kidnapped, knocked unconscious, and wakes up in a life that is not his own. His wife is not his wife, his son was never born, and he is a celebrated genius rather than an average professor. He must embark on a dangerous journey to get his true life back.",
+    "prequels": [],
+    "sequels": ["Standalone novel "],
+    "reviews": [
+      { "user": "Bob", "rating": 4, "comment": "A compelling and emotional read." },
+      {"user":"reader_pricess", "rating": 5, "comment": "An emotional and gripping story. Highly recommend."}
     ]
   }
 ]

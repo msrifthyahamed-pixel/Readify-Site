@@ -3,5 +3,7 @@
   { "name": "Andy Weir", "bio": "Hard science fiction master — The Martian, Project Hail Mary." },
   { "name": "TJ Klune", "bio": "Heartwarming fantasy with deep emotional impact." },
   { "name": "Frank Herbert", "bio": "Creator of the epic Dune universe." },
-  { "name": "J.R.R. Tolkien", "bio": "Father of modern fantasy literature." }
+  { "name": "J.R.R. Tolkien", "bio": "Father of modern fantasy literature." },
+  { "name": "Robin Hobb", "bio": "Renowned for intricate character-driven fantasy series." },
+  { "name": "Tana French", "bio": "Acclaimed for psychological mystery novels set in Ireland." }
 ]
