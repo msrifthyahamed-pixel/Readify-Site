@@ -70,6 +70,8 @@
       cursor: pointer;
     }
 
+
+
     .bar {
       width: 28px;
       height: 3px;
@@ -138,17 +140,22 @@
 
     .btn-again {
       background: var(--accent);
-      margin-left: 1rem;
     }
 
     .btn-again:hover { background: #7c3aed; }
 
     .btn-save {
       background: #10b981;
-      margin-top: 1.2rem;
     }
 
     .btn-save:hover { background: #059669; }
+
+    .recommendation > div:last-child {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
 
     /* Recommendation Card */
     .recommendation {

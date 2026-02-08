@@ -76,6 +76,8 @@
       transition: all 0.3s;
     }
 
+
+
     /* Hero ── Grid Layout */
     .hero {
       min-height: 85vh;
@@ -226,6 +228,13 @@
       .hero-image {
         height: 360px;
         margin: 2rem auto 0;
+        display: block;
+        background-image: url("image/istockphoto-949118068-170667a.jpg");
+        background-size: cover;
+        background-position: center;
+        min-height: 320px;          /* important */
+        width: 100%;
+
       }
     }
 

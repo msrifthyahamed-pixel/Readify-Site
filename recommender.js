@@ -1,3 +1,17 @@
+    // ── Hamburger Menu ──
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    hamburger.addEventListener('click', () => navLinks.classList.toggle('active'));
+
+    // ── Ambient Sounds ──
+    const soundButtons = document.querySelectorAll('.sound-btn');
+    const audios = {
+      rain: document.getElementById('rainAudio'),
+      fire: document.getElementById('fireAudio'),
+      forest: document.getElementById('forestAudio')
+    };
+
+
 let books = [];
 let currentBook = null;
 

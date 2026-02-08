@@ -137,6 +137,14 @@
       box-shadow: 0 0 0 3px rgba(59,130,246,0.15);
     }
 
+    .btn-container {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+
     .btn {
       background: var(--primary);
       color: white;
@@ -147,10 +155,10 @@
       font-weight: 500;
       cursor: pointer;
       transition: background 0.2s;
-      margin-right: 1rem;
     }
 
-    .btn:hover { background: #2563eb; }
+    .btn:hover { background: #2563eb;
+    }
 
     .btn-save {
       background: var(--success);
