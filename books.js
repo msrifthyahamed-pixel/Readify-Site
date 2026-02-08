@@ -1,20 +1,21 @@
 
-// Hamburger Menu Toggle
+// Hamburger Menu Toggle (safe attach)
 const hamburger = document.querySelector('.hamburger');
 const navLinks = document.querySelector('.nav-links');
-
-hamburger.addEventListener('click', () => {
-  navLinks.classList.toggle('active');
-  hamburger.classList.toggle('active');
-});
-
-// Close menu when a link is clicked
-document.querySelectorAll('.nav-links a').forEach(link => {
-  link.addEventListener('click', () => {
-    navLinks.classList.remove('active');
-    hamburger.classList.remove('active');
+if (hamburger && navLinks) {
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+    hamburger.classList.toggle('active');
   });
-});
+
+  // Close menu when a link is clicked
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('active');
+      hamburger.classList.remove('active');
+    });
+  });
+}
 
 let books = []; // will be loaded from JSON
 
@@ -29,15 +30,17 @@ async function loadBooks() {
 }
 
 
-    // ── DOM Elements ──
+    // ── DOM Elements (guarded for non-books pages) ──
     const bookGrid = document.getElementById("bookGrid");
     const searchInput = document.getElementById("searchInput");
     const genreFilter = document.getElementById("genreFilter");
     const modal = document.getElementById("bookModal");
     const closeModal = document.getElementById("closeModal");
+    const isBooksPage = !!bookGrid;
 
     // ── Render Cards ──
     function renderBooks(filteredBooks) {
+      if (!bookGrid) return;
       bookGrid.innerHTML = "";
       filteredBooks.forEach(book => {
         const card = document.createElement("div");
@@ -56,8 +59,10 @@ async function loadBooks() {
 
     // ── Show Modal ──
     function showModal(book) {
-      document.getElementById("modalTitle").textContent = book.title;
-      document.getElementById("modalSynopsis").textContent = book.synopsis;
+      const modalTitle = document.getElementById("modalTitle");
+      const modalSynopsis = document.getElementById("modalSynopsis");
+      if (modalTitle) modalTitle.textContent = book.title;
+      if (modalSynopsis) modalSynopsis.textContent = book.synopsis;
 
       const relatedList = document.getElementById("relatedList");
       relatedList.innerHTML = "";
@@ -74,25 +79,29 @@ async function loadBooks() {
       }
 
       const tbody = document.getElementById("reviewsBody");
-      tbody.innerHTML = "";
-      book.reviews.forEach(review => {
-        const row = document.createElement("tr");
-        row.innerHTML = `
-          <td>${review.user}</td>
-          <td>${review.rating} / 5</td>
-          <td>${review.comment}</td>
-        `;
-        tbody.appendChild(row);
-      });
+      if (tbody) {
+        tbody.innerHTML = "";
+        (book.reviews || []).forEach(review => {
+          const row = document.createElement("tr");
+          row.innerHTML = `
+            <td>${review.user}</td>
+            <td>${review.rating} / 5</td>
+            <td>${review.comment}</td>
+          `;
+          tbody.appendChild(row);
+        });
+      }
 
-      modal.style.display = "flex";
+      if (modal) modal.style.display = "flex";
     }
 
     // ── Close Modal ──
-    closeModal.addEventListener("click", () => modal.style.display = "none");
-    modal.addEventListener("click", e => {
-      if (e.target === modal) modal.style.display = "none";
-    });
+    if (closeModal && modal) {
+      closeModal.addEventListener("click", () => modal.style.display = "none");
+      modal.addEventListener("click", e => {
+        if (e.target === modal) modal.style.display = "none";
+      });
+    }
 
     // ── Filter Logic ──
     function filterBooks() {
@@ -111,9 +120,12 @@ async function loadBooks() {
     }
 
     // ── Event Listeners ──
-    searchInput.addEventListener("input", filterBooks);
-    genreFilter.addEventListener("change", filterBooks);
+    if (searchInput) searchInput.addEventListener("input", filterBooks);
+    if (genreFilter) genreFilter.addEventListener("change", filterBooks);
 
     
 //load JSON on page start
-loadBooks();
+// Only render books when on books page to avoid errors on other pages
+loadBooks().then(() => {
+  if (isBooksPage) renderBooks(books);
+}).catch(() => {});
